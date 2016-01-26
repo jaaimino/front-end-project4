@@ -11,9 +11,7 @@ function initFirebase(){
     firebaseRef = new Firebase(firebaseURL);
     // Attach an asynchronous callback to read the data at our posts reference
     getFirebase().on("value", function(snapshot) {
-      console.log(snapshot.val().posts);
       var postsObject = snapshot.val().posts;
-      console.log(postsObject)
       var postsArr = [];
       for(var i in postsObject){
         postsArr.push(postsObject[i]);
@@ -38,7 +36,6 @@ function createUser(callback){
       if (error) {
         console.log("Error creating user:", error);
       } else {
-        console.log("Successfully created user account with uid:", userData.uid);
         callback(userData);
       }
     });
@@ -52,7 +49,7 @@ function login(callback){
       if (error) {
         console.log("Login Failed!", error);
       } else {
-        console.log("Authenticated successfully with payload:", authData);
+        //console.log("Authenticated successfully with payload:", authData);
         setCurrentUser(authData);
         callback(authData);
       }
@@ -64,7 +61,6 @@ function logout(){
 }
 
 function setStuff(){
-    console.log("Setting stuff");
     getFirebase().child("posts").push({
       title: "Hello World!",
       author: "Firebase",
