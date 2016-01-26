@@ -5,6 +5,8 @@ var firebaseURL = "https://front-end-project4.firebaseio.com/";
 var firebaseRef = null;
 var currentUser = null;
 
+var onDataChange;
+
 function initFirebase(){
     firebaseRef = new Firebase(firebaseURL);
     // Attach an asynchronous callback to read the data at our posts reference
@@ -16,10 +18,16 @@ function initFirebase(){
       for(var i in postsObject){
         postsArr.push(postsObject[i]);
       }
-      renderPage(postsArr);
+      if(onDataChange){
+        onDataChange(postsArr);
+      }
     }, function (errorObject) {
       console.log("The read failed: " + errorObject.code);
     });
+}
+
+function setOnDataChange(callback){
+  onDataChange = callback;
 }
 
 function createUser(callback){
