@@ -7,6 +7,19 @@ var currentUser = null;
 
 function initFirebase(){
     firebaseRef = new Firebase(firebaseURL);
+    // Attach an asynchronous callback to read the data at our posts reference
+    getFirebase().on("value", function(snapshot) {
+      console.log(snapshot.val().posts);
+      var postsObject = snapshot.val().posts;
+      console.log(postsObject)
+      var postsArr = [];
+      for(var i in postsObject){
+        postsArr.push(postsObject[i]);
+      }
+      renderPage(postsArr);
+    }, function (errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
 }
 
 function createUser(callback){

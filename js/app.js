@@ -11,19 +11,12 @@ var renderExternalTmpl = function(item) {
        $(item.selector).html($.render.tmpl(item.data));
    });    
 }
-
-var movies = [
-	{ name: "The Red Violin", releaseYear: "1998" },
-	{ name: "Eyes Wide Shut", releaseYear: "1999" },
-	{ name: "The Inheritance", releaseYear: "1976" }
-];
-
-// Render the template with the movies data and insert
-// the rendered HTML under the "movieList" element
-
-renderExternalTmpl({ name: 'movie', selector: '#movieList', data: movies })
 	
-
+function renderPage(data){
+  // Render the template with the movies data and insert
+// the rendered HTML under the "movieList" element
+  renderExternalTmpl({ name: 'movie', selector: '#movieList', data: data })
+}
 
 initFirebase()
 logout();
