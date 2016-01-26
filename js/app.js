@@ -6,8 +6,6 @@ initFirebase()
 logout();
 setStuff();
 login(function(){
-  console.log("Logged in before calling stuff.");
-  console.log(getCurrentUser());
   setOnDataChange(function(data){
     renderPage(data);
   })
