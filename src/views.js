@@ -24,7 +24,9 @@ var renderExternalTmpl = function(item, callback) {
    .done(function(tmplData) {
        $.templates({ tmpl: tmplData });
        $(item.selector).html($.render.tmpl(item.data));
-       callback();
+       if(callback){
+           callback();
+       }
    });  
 }
 	
