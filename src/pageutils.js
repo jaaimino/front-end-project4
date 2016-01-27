@@ -1,5 +1,5 @@
 var renderExternalTmpl = function(item) {
-  var file = '../templates/' + item.name + '.tmpl.html';
+  var file = item.file + '.tmpl.html';
   $.when($.get(file))
    .done(function(tmplData) {
        $.templates({ tmpl: tmplData });
@@ -10,5 +10,5 @@ var renderExternalTmpl = function(item) {
 function renderPage(data){
   // Render the template with the movies data and insert
 // the rendered HTML under the "movieList" element
-  renderExternalTmpl({ name: 'movie', selector: '#movieList', data: data })
+  renderExternalTmpl({ file: '../templates/movie', selector: '#movieList', data: data })
 }
