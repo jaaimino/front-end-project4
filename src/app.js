@@ -11,3 +11,5 @@ login(function(){
   })
   setStuff();
 });
+
+console.log(window.location.href);

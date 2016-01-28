@@ -1,8 +1,8 @@
 /* Configuration for views and set templates for views */
 var views = {
     "index" : {
-        "template" : "",
-        "controller" : ""
+        "template" : "../views/index",
+        "controller" : "index"
     },
     "newpost" : {
         "template" : "",
