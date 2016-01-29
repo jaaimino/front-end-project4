@@ -1,7 +1,6 @@
 /* global getControllers */
 addController("index", {
     setup: function() {
-        console.log("Setup on index");
         addOnDataChange(function(data) {
             var postsArr = [];
             if (data.posts) {
