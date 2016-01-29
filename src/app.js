@@ -11,6 +11,4 @@ login(function(){
   setStuff();
 });
 
-console.log("Controllers " + JSON.stringify(getControllers()));
-
 findRoute();
