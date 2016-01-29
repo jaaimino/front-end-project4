@@ -20,10 +20,8 @@ $(window).on("hashchange", function() {
  * Figure out what route we're at, and change the page to that
  */
 function findRoute(){
-    console.log(location.hash);
     for (var route in routes){
         if(location.hash === routes[route].url){
-            console.log("Location hash: " + location.hash + " matches: " + routes[route].url);
             changePage(routes[route]);
             return;
         }
