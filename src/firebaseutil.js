@@ -10,18 +10,6 @@ var onDataChange;
 function initFirebase(){
     firebaseRef = new Firebase(firebaseURL);
     // Attach an asynchronous callback to read the data at our posts reference
-    getFirebase().on("value", function(snapshot) {
-      var postsObject = snapshot.val().posts;
-      var postsArr = [];
-      for(var i in postsObject){
-        postsArr.push(postsObject[i]);
-      }
-      if(onDataChange){
-        onDataChange(postsArr);
-      }
-    }, function (errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
 }
 
 function setOnDataChange(callback){

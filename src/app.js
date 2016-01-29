@@ -1,15 +1,16 @@
 /*
- * Main app stuff here 
- * All DOM manipulation in here
+ * App initialization here and stuff
  */
 initFirebase()
 logout();
 setStuff();
 login(function(){
   setOnDataChange(function(data){
-    renderPage(data);
+    //renderPage(data);
   })
   setStuff();
 });
 
-console.log(window.location.href);
+console.log("Controllers " + JSON.stringify(getControllers()));
+
+findRoute();
