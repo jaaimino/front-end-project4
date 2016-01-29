@@ -1,6 +1,7 @@
 /* global getControllers */
 addController("index", {
     setup : function(){
+        console.log("Setup on index");
         getFirebase().on("value", function(snapshot) {
           if(snapshot.val().posts){
               var postsObject = snapshot.val().posts;
