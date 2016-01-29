@@ -37,10 +37,14 @@ function createUser(callback) {
   });
 }
 
-function login(callback) {
-  getFirebase().authWithPassword({
-    email: "bobtony@firebase.com",
+/**
+ *  email: "bobtony@firebase.com",
     password: "correcthorsebatterystaple"
+ */
+function login(email, pass, callback) {
+  getFirebase().authWithPassword({
+    email: email,
+    password: pass
   }, function(error, authData) {
     if (error) {
       console.log("Login Failed!", error);
@@ -57,17 +61,8 @@ function logout() {
   getFirebase().unauth();
 }
 
-function setStuff() {
-  getFirebase().child("posts").push({
-    title: "Hello World!",
-    author: "Firebase",
-    text: "Stuff!",
-    location: {
-      city: "San Francisco",
-      state: "California",
-      zip: 94103
-    }
-  });
+function addPost(post) {
+  getFirebase().child("posts").push(post);
 }
 
 /**

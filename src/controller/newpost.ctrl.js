@@ -1,12 +1,24 @@
 /* global getControllers */
 addController("newpost", {
     setup : function(){
-      console.log($("#nope").text());
-        $("#postForm").submit(function( event ) {
-          alert( "Handler for .submit() called." );
-          event.preventDefault();
+      $("#postForm").submit(function( event ) {
+        var textField = $('#postForm').find('input[name="text"]');
+        var text = textField.val();
+        addPost({
+          title: "Hello World!",
+          author: "Firebase",
+          text: text,
+          location: {
+            city: "San Francisco",
+            state: "California",
+            zip: 94103
+          }
         });
+        textField.val("");
+        event.preventDefault();
+      });
     },
     renderPage : function(){
+      
     }
 })

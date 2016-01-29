@@ -9,6 +9,11 @@ var routes = {
         "template" : "../views/newpost",
         "controller" : "newpost",
         "url" : "#/newpost"
+    },
+    "login" : {
+        "template" : "../views/login",
+        "controller" : "login",
+        "url" : "#/login"
     }
 }
 
@@ -37,12 +42,12 @@ function findRoute(){
  */
 function changePage(route){
     var controller = getController(route.controller);
-    if(controller.setup){
-        controller.setup();
-    }
     renderExternalTmpl({ file: route.template, selector: '#view' }, function(){
+        if(controller.setup){
+            controller.setup();
+        }
         if(controller.renderPage){
-            controller.renderPage();
+            controller.renderPage()
         }
     });
 }
