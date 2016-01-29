@@ -27,9 +27,10 @@ function findRoute(){
             changePage(routes[route]);
             return;
         }
-        changePage(routes["index"]);
-        return;
+
     }
+    changePage(routes["index"]);
+    return;
 }
 
 /**
