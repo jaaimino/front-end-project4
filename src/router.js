@@ -1,5 +1,5 @@
 /* Configuration for views and set templates for views */
-var views = {
+var routes = {
     "index" : {
         "template" : "../views/index",
         "controller" : "index",
@@ -20,12 +20,12 @@ $(window).on("hashchange", function() {
  * Figure out what route we're at, and change the page to that
  */
 function findRoute(){
-    for (var route in views){
-        if(location.hash === views[route].url){
-            changePage(views[route]);
+    for (var route in routes){
+        if(location.hash === routes[route].url){
+            changePage(routes[route]);
             return;
         }
-        changePage(views["index"]);
+        changePage(routes["index"]);
     }
 }
 
