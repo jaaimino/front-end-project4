@@ -47,7 +47,7 @@ function changePage(route){
     });
 }
 
-var renderExternalTmpl = function(item, callback) {
+function renderExternalTmpl(item, callback) {
   var file = item.file + '.tmpl.html';
   $.when($.get(file))
    .done(function(tmplData) {
