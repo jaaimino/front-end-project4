@@ -1,6 +1,5 @@
 /* global getControllers */
-
-getControllers()["index"] = {
+addController("index", {
     setup : function(){
         getFirebase().on("value", function(snapshot) {
           if(snapshot.val().posts){
@@ -17,4 +16,4 @@ getControllers()["index"] = {
     },
     renderPage : function(){
     }
-}
+})
