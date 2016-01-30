@@ -32,8 +32,18 @@ function findRoute(){
         }
 
     }
+    setHash("#/");
     changePage(routes["index"]);
     return;
+}
+
+function setHash(hash){
+    if(history.pushState) {
+    history.pushState(null, null, hash);
+}
+    else {
+        location.hash = hash;
+    }
 }
 
 /**
