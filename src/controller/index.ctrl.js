@@ -55,7 +55,6 @@ function deactivate(index){
 }
 
 function left(){
-  console.log(carousel.active)
   deactivate(carousel.active);
   carousel.active -= 1;
   if(carousel.active < 0){
@@ -65,7 +64,6 @@ function left(){
 }
 
 function right(){
-  console.log(carousel.active)
   deactivate(carousel.active);
   carousel.active += 1;
   if(carousel.active > carousel.elements.length-1){
