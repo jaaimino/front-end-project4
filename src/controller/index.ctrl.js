@@ -50,6 +50,9 @@ addController("index", {
                 url:"http://placecage.com/g/600/300"
             },
             {
+                url:"http://placecage.com/g/600/300"
+            },
+            {
                 url:"http://placecage.com/500/300"
             }
             
