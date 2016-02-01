@@ -6,7 +6,8 @@ addController("login", {
         var passField = $('#loginForm').find('input[name="pass"]');
         var user = userField.val();
         var pass = passField.val();
-        login(user, pass, function(){
+        login(user, pass, function(data){
+          console.log(data);
           console.log("Logged in.");
         });
         userField.val("");
