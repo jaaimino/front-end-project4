@@ -14,12 +14,16 @@ addController("index", {
                 });
             }
         });
+        renderExternalTmpl({
+        file: "../../templates/slidermovie",
+        selector: '.display',
+                    data: postsArr
+        });
+        
         
       $(".left").click(left);
       $(".right").click(right);
-      $(".citem").css("display", "none"); 
-      carousel.elements = $(".citem").toArray();
-      $(carousel.elements[0]).css("display", "inline");
+
     },
     renderPage: function() {
         getFirebase().once("value", function(snapshot) {
@@ -36,6 +40,9 @@ addController("index", {
             });
         });
 
+      $(".citem").css("display", "none"); 
+      carousel.elements = $(".citem").toArray();
+      $(carousel.elements[0]).css("display", "inline");
     }
 })
 
