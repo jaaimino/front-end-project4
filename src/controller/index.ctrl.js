@@ -14,6 +14,9 @@ addController("index", {
                 });
             }
         });
+        
+      $(".left").click(left);
+      $(".right").click(right);
       $(".citem").css("display", "none"); 
       carousel.elements = $(".citem").toArray();
       $(carousel.elements[0]).css("display", "inline");
