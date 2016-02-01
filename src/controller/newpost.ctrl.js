@@ -1,11 +1,8 @@
 /* global getControllers */
 addController("newpost", {
     setup : function(){
-      tinymce.init({
-        selector: '#editor'
-      });
       $("#postForm").submit(function( event ) {
-        var textField = $('#postForm').find('input[name="text"]');
+        var textField = $('#postForm').find('textarea[name="text"]');
         var text = textField.val();
         addPost({
           title: "Hello World!",
