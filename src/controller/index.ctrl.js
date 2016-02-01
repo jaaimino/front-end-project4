@@ -8,8 +8,8 @@ addController("index", {
                     postsArr.push(data.posts[key]);
                 }
                 renderExternalTmpl({
-                    file: "../../templates/movie",
-                    selector: '#movieList',
+                    file: "../../templates/post",
+                    selector: '#posts',
                     data: postsArr
                 });
             }
@@ -30,8 +30,8 @@ addController("index", {
                 }
             }
             renderExternalTmpl({
-                file: "../../templates/movie",
-                selector: '#movieList',
+                file: "../../templates/post",
+                selector: '#posts',
                 data: postsArr
             });
         });
