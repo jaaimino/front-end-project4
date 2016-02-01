@@ -14,6 +14,9 @@ addController("index", {
                 });
             }
         });
+      $(".citem").css("display", "none"); 
+      carousel.elements = $(".citem").toArray();
+      $(carousel.elements[0]).css("display", "inline");
     },
     renderPage: function() {
         getFirebase().once("value", function(snapshot) {
@@ -32,3 +35,41 @@ addController("index", {
 
     }
 })
+
+
+var carousel = {
+  elements:[],
+  active: 0
+}
+function setup(){
+
+}
+function activate(index){
+  $(carousel.elements[index]).css("display", "inline");
+}
+function deactivate(index){
+  $(carousel.elements[index]).css("display", "none");
+}
+
+function left(){
+  console.log(carousel.active)
+  deactivate(carousel.active);
+  carousel.active -= 1;
+  if(carousel.active < 0){
+    carousel.active = carousel.elements.length-1;
+  }
+  activate(carousel.active);
+}
+
+function right(){
+  console.log(carousel.active)
+  deactivate(carousel.active);
+  carousel.active += 1;
+  if(carousel.active > carousel.elements.length-1){
+    carousel.active = 0;
+  }
+  activate(carousel.active);
+  
+}
+
+
