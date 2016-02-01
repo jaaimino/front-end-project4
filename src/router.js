@@ -17,6 +17,16 @@ var routes = {
     }
 }
 
+function initRouter(){
+    var controller = getController('global');
+    if(controller.setup){
+        controller.setup();
+    }
+    if(controller.renderPage){
+        controller.renderPage()
+    }
+}
+
 $(window).on("hashchange", function() {
     findRoute(location.hash);
 });

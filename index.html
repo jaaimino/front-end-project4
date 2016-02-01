@@ -9,7 +9,8 @@
     <script src="bower_components/firebase/firebase.js"></script>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/lightstyle.css">
+    <link id="pagestyle" rel="stylesheet" href="../css/lightstyle.css">
+    
 </head>
 
 <body>
@@ -17,6 +18,7 @@
         <a href="#/">Home</a>
         <a href="#/newpost">New Post</a>
         <a href="#/login">Login</a>
+        <button id="changeStyle">Change Style</button>
     </div>
     <div class="wrapper">
         <div id="view"></div>
@@ -27,6 +29,7 @@
     <script src="src/controller/login.ctrl.js"></script>
     <script src="src/controller/newpost.ctrl.js"></script>
     <script src="src/controller/index.ctrl.js"></script>
+    <script src="src/controller/global.ctrl.js"></script>
     <script src="src/app.js"></script>
 </body>
 
