@@ -5,8 +5,8 @@ var currentStyle = 0;
 
 addController("global", {
     setup : function() {
-        $("#changeStyle").click(function(){
-            console.log("Changed stylesheet");
+        $("#changeStyle").click(function(event){
+            event.preventDefault();
             swapStyleSheet();
         });
     },
