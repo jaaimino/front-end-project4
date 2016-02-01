@@ -1,4 +1,8 @@
 /* global getControllers */
+
+
+
+
 addController("index", {
     setup: function() {
         addOnDataChange(function(data) {
@@ -14,11 +18,8 @@ addController("index", {
                 });
             }
         });
-        renderExternalTmpl({
-        file: "../../templates/slidermovie",
-        selector: '.display',
-                    data: postsArr
-        });
+        
+
         
         
       $(".left").click(left);
@@ -39,10 +40,35 @@ addController("index", {
                 data: postsArr
             });
         });
+        
+        
+        var seg = [
+            {
+                url:"http://placecage.com/600/300"
+            },
+            {
+                url:"http://placecage.com/g/600/300"
+            },
+            {
+                url:"http://placecage.com/500/300"
+            }
+            
+            ]
 
-      $(".citem").css("display", "none"); 
-      carousel.elements = $(".citem").toArray();
-      $(carousel.elements[0]).css("display", "inline");
+        
+        renderExternalTmpl({
+        file: "../../templates/movie",
+        selector: '.container',
+        data: seg
+        },function(){
+            carousel.elements = $(".citem").toArray();
+            console.log(carousel.elements);
+            $(carousel.elements[0]).css("display", "inline");
+        });
+        
+
+
+        
     }
 })
 
@@ -52,7 +78,7 @@ var carousel = {
   active: 0
 }
 function setup(){
-
+    
 }
 function activate(index){
   $(carousel.elements[index]).css("display", "inline");
