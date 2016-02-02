@@ -1,6 +1,6 @@
 /* global getControllers */
 
-var styleSheets = ["../css/lightstyle.css", "../css/darkstyle.css"];
+var styleSheets = ["../css/materialred.css", "../css/materialblue.css", "../css/materialpink.css"];
 var currentStyle = 0;
 
 addController("global", {

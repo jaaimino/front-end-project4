@@ -27,10 +27,6 @@ addController("index", {
                 });
             }
         });
-        
-
-        
-        
       $(".left").click(left);
       $(".right").click(right);
 
@@ -70,7 +66,7 @@ addController("index", {
         
         renderExternalTmpl({
         file: "../../templates/movie",
-        selector: '.container',
+        selector: '.slider-container',
         data: seg
         },function(){
             carousel.elements = $(".citem").toArray();

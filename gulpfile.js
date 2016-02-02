@@ -4,18 +4,25 @@ var stylus = require('gulp-stylus');
 var nib = require('nib');
 
 // Get one .styl file and render
-gulp.task('light', function () {
-  gulp.src('./stylus/lightstyle.styl')
+gulp.task('red', function () {
+  gulp.src('./stylus/materialred.styl')
     .pipe(stylus({ use: nib(), compress: true}))
     .pipe(gulp.dest('./css'));
 });
 
 // Get one .styl file and render
-gulp.task('dark', function () {
-  gulp.src('./stylus/darkstyle.styl')
+gulp.task('blue', function () {
+  gulp.src('./stylus/materialblue.styl')
+    .pipe(stylus({ use: nib(), compress: true}))
+    .pipe(gulp.dest('./css'));
+});
+
+// Get one .styl file and render
+gulp.task('pink', function () {
+  gulp.src('./stylus/materialpink.styl')
     .pipe(stylus({ use: nib(), compress: true}))
     .pipe(gulp.dest('./css'));
 });
 
 // Default gulp task to run
-gulp.task('default', ['light', 'dark']);
+gulp.task('default', ['red', 'blue', 'pink']);
