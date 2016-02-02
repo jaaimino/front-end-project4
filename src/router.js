@@ -10,6 +10,11 @@ var routes = {
         "controller" : "newpost",
         "url" : "#/newpost"
     },
+    "addvideo" : {
+        "template" : "../views/addvideo",
+        "controller" : "addvideo",
+        "url" : "#/addvideo"
+    },
     "login" : {
         "template" : "../views/login",
         "controller" : "login",

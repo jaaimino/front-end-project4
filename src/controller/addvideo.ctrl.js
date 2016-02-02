@@ -1,13 +1,14 @@
 /* global getControllers */
-addController("newpost", {
+addController("addvideo", {
     setup : function(){
       $("#postForm").submit(function( event ) {
-        var titleField = $('#postForm').find('input[name="title"]');
+        var urlField = $('#postForm').find('input[name="videoID"]');
         var textField = $('#postForm').find('textarea[name="text"]');
-        var title = titleField.val();
+        var vid = reg_process(urlField.val());
         var text = textField.val(); // process the text at this point (maybe probably)
+      /* 
         addPost({
-          title: title,
+          vid: vid,
           text: text,
           location: {
             city: "San Francisco",
@@ -15,13 +16,27 @@ addController("newpost", {
             zip: 94103
           }
         });
+        */
         forcePageChange("#/");
-        titleField.val("");
+        urlField.val("");
         textField.val("");
         event.preventDefault();
+        
       });
+      
     },
     renderPage : function(){
       
     }
-})
+});
+
+var reg_process = function(url){
+  console.log("called");
+  var parser = /(?:.*\/\/)?.*\/(?:watch\?v=)?([a-zA-Z]*)/;
+  
+  var result = parser.exec(url);
+  console.log(result);
+  return(result);
+  
+  
+};

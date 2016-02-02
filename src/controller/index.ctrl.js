@@ -7,10 +7,12 @@ addController("index", {
     setup: function() {
         if(isLoggedIn()){
             $("#newpostButton").show();
+            $("#addvideoButton").show();
             $("#logoutButton").show();
             $("#loginButton").hide();
         } else {
             $("#loginButton").show();
+            $("#addvideoButton").hide();
             $("#newpostButton").hide();
             $("#logoutButton").hide();
         }
