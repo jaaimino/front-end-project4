@@ -2,6 +2,7 @@
 addController("login", {
     setup : function(){
       $("#loginForm").submit(function( event ) {
+        event.preventDefault();
         var userField = $('#loginForm').find('input[name="user"]');
         var passField = $('#loginForm').find('input[name="pass"]');
         var user = userField.val();
@@ -12,10 +13,10 @@ addController("login", {
             $('#loginError').text(error);
             return;
           }
+          forcePageChange("#/");
         });
         userField.val("");
         passField.val("");
-        event.preventDefault();
       });
     },
     renderPage : function(){

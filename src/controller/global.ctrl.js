@@ -9,6 +9,11 @@ addController("global", {
             event.preventDefault();
             swapStyleSheet();
         });
+        $("#logoutButton").click(function(event){
+            event.preventDefault();
+            logout();
+            forcePageChange("#/");
+        });
     },
     renderPage: function() {
     }

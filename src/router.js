@@ -31,6 +31,11 @@ $(window).on("hashchange", function() {
     findRoute(location.hash);
 });
 
+function forcePageChange(route){
+    setHash(route);
+    findRoute();
+}
+
 /**
  * Figure out what route we're at, and change the page to that
  */
