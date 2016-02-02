@@ -8,7 +8,6 @@ addController("newpost", {
         var text = textField.val();
         addPost({
           title: title,
-          author: getCurrentUser(),
           text: text,
           location: {
             city: "San Francisco",
@@ -16,6 +15,7 @@ addController("newpost", {
             zip: 94103
           }
         });
+        forcePageChange("#/");
         titleField.val("");
         textField.val("");
         event.preventDefault();

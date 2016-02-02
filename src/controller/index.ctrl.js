@@ -5,6 +5,15 @@
 
 addController("index", {
     setup: function() {
+        if(isLoggedIn()){
+            $("#newpostButton").show();
+            $("#logoutButton").show();
+            $("#loginButton").hide();
+        } else {
+            $("#loginButton").show();
+            $("#newpostButton").hide();
+            $("#logoutButton").hide();
+        }
         addOnDataChange(function(data) {
             var postsArr = [];
             if (data && data.posts) {
