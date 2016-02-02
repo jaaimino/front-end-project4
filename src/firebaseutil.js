@@ -50,8 +50,6 @@ function login(email, pass, callback) {
       callback(authData, error);
     }
     else {
-      //console.log("Authenticated successfully with payload:", authData);
-      setCurrentUser(authData);
       callback(authData, error);
     }
   });
@@ -68,15 +66,14 @@ function addPost(post) {
 /**
  * Getters and setters
  */
+function isLoggedIn(){
+  return getFirebase().getAuth() != null
+}
 
 function getFirebase() {
   return this.firebaseRef;
 }
 
 function getCurrentUser() {
-  return currentUser;
-}
-
-function setCurrentUser(userData) {
-  currentUser = userData;
+  getFirebase().getAuth();
 }
