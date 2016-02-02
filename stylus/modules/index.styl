@@ -55,7 +55,7 @@
 .post h1
     color: primary-text-dark
     padding: 3px
-    border-bottom: 2px dotted primary-text-dark
+    border-bottom: 2px solid primary-text-dark
     
 .navbar a:hover
     color: secondary-dark
@@ -95,3 +95,19 @@ a{
 .slider-container:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.button
+    position: relative
+    display: block
+    margin: 30px auto
+    overflow: hidden
+    border-width: 0
+    outline: none
+    border-radius: 2px
+    box-shadow: shadow-low
+    background-color: #2ecc71
+    color: #ecf0f1
+    transition: background-color .3s
+
+.button:hover, .button:focus
+    background-color: #27ae60
