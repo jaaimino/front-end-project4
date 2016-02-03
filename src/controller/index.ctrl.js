@@ -20,7 +20,9 @@ addController("index", {
             var postsArr = [];
             if (data && data.posts) {
                 for (var key in data.posts) {
-                    postsArr.push(data.posts[key]);
+                    var post = data.posts[key];
+                    console.log(post.text);
+                    postsArr.push(post);
                 }
                 renderExternalTmpl({
                     file: "../../templates/post",
@@ -57,7 +59,8 @@ addController("index", {
             var postsArr = [];
             if (snapshot.val() && snapshot.val().posts) {
                 for (var key in snapshot.val().posts) {
-                    postsArr.push(snapshot.val().posts[key]);
+                    var post = snapshot.val().posts[key];
+                    postsArr.push(post);
                 }
             }
             renderExternalTmpl({
