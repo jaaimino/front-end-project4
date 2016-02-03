@@ -30,6 +30,25 @@ addController("index", {
                 });
             }
         });
+        addOnDataChange(function(data) {
+            var vids = [];
+            if (data && data.videos) {
+                for (var key in data.videos) {
+                    vids.push(data.videos[key]);
+                }
+            renderExternalTmpl({
+                file: "../../templates/movie",
+                selector: '.slider-container',
+                data: vids
+                },function(){
+                    carousel.elements = $(".citem").toArray();
+                    console.log(carousel.elements);
+                    $(carousel.elements[0]).css("display", "inline");
+            });
+            }
+
+        });
+        
       $(".left").click(left);
       $(".right").click(right);
 
@@ -48,37 +67,28 @@ addController("index", {
                 selector: '#posts',
                 data: postsArr
             });
-        });
+            
+            var vids = [];
+            if (snapshot.val() && snapshot.val().videos) {
+                for (var key in snapshot.val().videos){
+                    vids.push(snapshot.val().videos[key]);
+                }
+            renderExternalTmpl({
+                file: "../../templates/movie",
+                selector: '.slider-container',
+                data: vids
+                },function(){
+                    carousel.elements = $(".citem").toArray();
+                    console.log(carousel.elements);
+                    $(carousel.elements[0]).css("display", "inline");
+            });
         
-        
-        var seg = [
-            {
-                url:"http://placecage.com/600/300"
-            },
-            {
-                url:"http://placecage.com/g/600/300"
-            },
-            {
-                url:"http://placecage.com/g/600/300"
-            },
-            {
-                url:"http://placecage.com/500/300"
             }
             
-            ]
 
-        
-        renderExternalTmpl({
-        file: "../../templates/movie",
-        selector: '.slider-container',
-        data: seg
-        },function(){
-            carousel.elements = $(".citem").toArray();
-            console.log(carousel.elements);
-            $(carousel.elements[0]).css("display", "inline");
+            
+            
         });
-        
-
 
         
     }
