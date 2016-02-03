@@ -63,6 +63,9 @@ function addPost(post) {
   getFirebase().child("posts").push(post);
 }
 
+function addVideo(video) {
+  getFirebase().child("videos").push(video);
+}
 /**
  * Getters and setters
  */
