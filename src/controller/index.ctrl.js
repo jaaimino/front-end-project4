@@ -21,7 +21,6 @@ addController("index", {
             if (data && data.posts) {
                 for (var key in data.posts) {
                     var post = data.posts[key];
-                    console.log(post.text);
                     postsArr.push(post);
                 }
                 renderExternalTmpl({
