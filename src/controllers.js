@@ -1,7 +1,6 @@
 var controllers = {}
 
 function addController(name, controller){
-    console.log(name)
     controllers[name] = controller;
 }
 
