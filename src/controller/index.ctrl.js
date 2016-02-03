@@ -107,6 +107,7 @@ function activate(index){
   $(carousel.elements[index]).css("display", "inline");
 }
 function deactivate(index){
+  console.log($(carousel.elements[index].iframe));
   $(carousel.elements[index]).css("display", "none");
 }
 

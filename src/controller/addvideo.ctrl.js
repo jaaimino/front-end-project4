@@ -31,8 +31,7 @@ addController("addvideo", {
 });
 
 var reg_process = function(url){
-  var parser = /(?:.*\/\/)?.*\/(?:watch\?v=)?([0-9a-zA-Z]*)/;
-  
+  var parser = /(?:.*\/\/)?.*\/(?:watch\?v=)?([0-9a-zA-Z\-]*)/;
   var result = parser.exec(url);
   return(result);
   
