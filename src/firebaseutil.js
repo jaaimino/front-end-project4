@@ -25,8 +25,8 @@ function addOnDataChange(callback) {
 
 function createUser(callback) {
   getFirebase().createUser({
-    email: "jacob@jacob.com",
-    password: "jacob"
+    email: "",
+    password: ""
   }, function(error, userData) {
     if (error) {
       callback(userData, error);
@@ -37,10 +37,6 @@ function createUser(callback) {
   });
 }
 
-/**
- *  email: "bobtony@firebase.com",
-    password: "correcthorsebatterystaple"
- */
 function login(email, pass, callback) {
   getFirebase().authWithPassword({
     email: email,
