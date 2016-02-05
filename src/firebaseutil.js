@@ -25,8 +25,8 @@ function addOnDataChange(callback) {
 
 function createUser(callback) {
   getFirebase().createUser({
-    email: "bobtony@firebase.com",
-    password: "correcthorsebatterystaple"
+    email: "jacob@jacob.com",
+    password: "jacob"
   }, function(error, userData) {
     if (error) {
       callback(userData, error);
