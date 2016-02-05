@@ -21,7 +21,7 @@ addController("index", {
             if (data && data.posts) {
                 for (var key in data.posts) {
                     var post = data.posts[key];
-                    postsArr.push(post);
+                    postsArr.unshift(post);
                 }
                 renderExternalTmpl({
                     file: "../../templates/post",
@@ -59,10 +59,9 @@ addController("index", {
             if (snapshot.val() && snapshot.val().posts) {
                 for (var key in snapshot.val().posts) {
                     var post = snapshot.val().posts[key];
-                    postsArr.push(post);
+                    postsArr.unshift(post);
                 }
             }
-            postsArr = postsArr.reverse();
             renderExternalTmpl({
                 file: "../../templates/post",
                 selector: '#posts',
