@@ -1,6 +1,8 @@
 /* global getControllers */
 addController("addvideo", {
     setup : function(){
+      tinymce.EditorManager.editors = []; 
+      tinymce.init({selector:"#editor"});
       $("#postForm").submit(function( event ) {
         var urlField = $('#postForm').find('input[name="videoID"]');
         var textField = $('#postForm').find('textarea[name="text"]');
