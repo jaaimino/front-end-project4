@@ -62,6 +62,7 @@ addController("index", {
                     postsArr.push(post);
                 }
             }
+            postsArr = postsArr.reverse();
             renderExternalTmpl({
                 file: "../../templates/post",
                 selector: '#posts',
@@ -72,7 +73,7 @@ addController("index", {
             if (snapshot.val() && snapshot.val().videos) {
                 for (var key in snapshot.val().videos){
                     vids.push(snapshot.val().videos[key]);
-                }
+            }
             renderExternalTmpl({
                 file: "../../templates/movie",
                 selector: '.slider-container',
